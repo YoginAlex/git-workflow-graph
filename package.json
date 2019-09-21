@@ -8,9 +8,18 @@
     "parcel": "^1.12.3"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "ghpages": "gh-pages-deploy",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "gh-pages-deploy": "^0.5.1"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "build"
+    ],
+    "commit": "gh-page bump"
   }
 }
